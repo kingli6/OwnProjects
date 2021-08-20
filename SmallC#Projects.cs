@@ -1,5 +1,3 @@
-
-/*
 using System;
 					
 public class Program
@@ -7,14 +5,23 @@ public class Program
 	public static void Main()
 	{
 		Program p  = new Program();
-		Console.WriteLine(p.Paragraph("World"));
+		Console.WriteLine(p.DaysinMonth(Month.februari));
 	}
 	////////////////////////////////
+	
+	
+	public enum Month{
+	januari = 1, februari, mars, april, maj, juni, augusti, september, oktober, november, december
+	}
+	
 	 //function enum months
-	public int Months(enum.month){
-		enum Month {Januari = 31, Februari = 30, Mars = 31, April = 30, Maj = 31, Juni = 30,
-					Juli = 31, Augusti = 30, September = 31, October = 30, November = 31, December = 30,}
-		return 
+	public int DaysinMonth(Month month){
+		if(month == Month.februari)				//notice Month.februari is needed when comparing
+			return 28;
+		else if((int)month % 2 == 0) return 30;	//notice the (int) while calculating
+		else return 31;
+		//error
+		//Not being able to find a way to return a value that's assigned to the enum.
 	}
 	
 	//function 6 returnera "<p>string</p>"
@@ -24,9 +31,9 @@ public class Program
 	
 	//function 5 avrunda ett tal till två decimaler
 	public double Avrunda(double num){
-		return Math.Round(num,2);
-		//int placeHolder = num;
-		//double placeHolder2 = placeHolder - num;
+		//return Math.Round(num,2);
+		int placeHolder = int.Parse(num);
+		double placeHolder2 = placeHolder - num;
 		//example
 		//3.45	3 and 0.45 
 		//
@@ -55,8 +62,17 @@ public class Program
 		return a+b;
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+
 }
-*
+
+/**
 public static void Main()
 	{
 		Console.WriteLine("---Welcome to Move @!---");
@@ -66,7 +82,7 @@ public static void Main()
 		 {'#','-','-','-','@','-','-','#'},	//2,4
 		 {'#','-','-','-','-','-','-','#'},
 		 {'#','#','#','#','#','#','#','#'}};
-		
+
 		char userInput;
 		bool endGame = false;
 		int a = 2, b = 4; 	//these will remember where @ is
@@ -80,7 +96,7 @@ public static void Main()
 				}
 				Console.WriteLine();
 			}
-			
+
 			//constrols
 			userInput = char.Parse(Console.ReadLine());
 			if(userInput == 'w'){array2D[a,b] = '-'; array2D[a-1, b] = '@'; a--;}
@@ -92,4 +108,29 @@ public static void Main()
 		}
 		Console.WriteLine("\nGood Bye!");
 	}
-  */
+*
+Random r = new Random();
+		int[] arr = new int[10];
+		for(int x = 0; x < arr.Length; x++){
+			arr[x] = r.Next(0, 20);
+		}
+		for(int x = 0; x < arr.Length; x++){
+			Console.Write(arr[x] + ", ");
+		}
+		Console.WriteLine();
+		
+		int placeHolder = 0;
+		for(int i= 0; i < arr.Length; i++){
+			for(int y = 0; y < arr.Length; y++){
+				if(arr[i] > arr[y]){
+					placeHolder = arr[i]; arr[i] = arr[y]; arr[y] = placeHolder;
+				}
+			}
+			
+		}
+		for(int x = 0; x < arr.Length; x++){
+			Console.Write(arr[x] + ", ");
+		}
+*
+
+**/
