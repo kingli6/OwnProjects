@@ -23,18 +23,57 @@
 //  -.Split(), .Contains and Regex
 //we messed with screen sizes, color, title and changing data types.
 
+//-------------Second try----------------------------
+//CHeck git hub
+            //https://github.com/jenspalmqvist/CSharpCourse2021/blob/master/InputAndLoops/Program.cs
+            
+            List<string> items = new List<string>();
+            while (true)
+            {
+                Console.Write("Type your product: ");
+                string userInput = Console.ReadLine().Trim();
+                //exit program check.
+                if (userInput.ToLower() == "exit") break;
+
+                //Control for errors
+                    //Check for '-'
+                if (!userInput.Contains('-')){
+                    Console.WriteLine("Missing a '-'. Try again.");
+                    continue;
+                }
+                  
+                var split = userInput.Split('-');
+                string leftPhrase = split[0];
+                    //check for letter on the 0th index on leftphrase
+                if (!Char.IsLetter(leftPhrase[0])){
+                    Console.WriteLine("Missing first letter. Try again.");
+                    continue;
+                }
+                    //check for digits on rightphrase. Not sure what happens if its false bool.
+                bool rightPhrase = int.TryParse(split[1], out int rightPhrase1);
+                //Console.WriteLine(rightPhrase + "  " + rightPhrase1 + "<------------test");
+                if(!(rightPhrase1 > 200 && rightPhrase1 < 500)){
+                    Console.WriteLine("Wrong digits to the right, try again");
+                    continue;
+                }
+
+                //when all checks are passed
+                items.Add(userInput); Console.WriteLine("Here are your products.");
+                foreach (var item in items)
+                {
+                    Console.WriteLine(item);
+                }
 
 
+//---------------First try--------------------------------
 int checkNumbers = 0;
             List<string> productList = new List<string>();
             while (true)
             {
                 Console.Write("Product: ");
                 string product = Console.ReadLine().Trim();
-                if(product.ToLower() == "exit")
-                {
-                    break;
-                }
+                if(product.ToLower() == "exit"){break;}
+                
                 //control for error
                 string lastDigits = product.Substring(product.Length - 3, 3);
                 try
@@ -70,7 +109,6 @@ int checkNumbers = 0;
                 {
                     Console.WriteLine(item);
                 }
-                
             }
             Console.WriteLine("Exiting.....................");
 
