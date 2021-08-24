@@ -1,0 +1,71 @@
+/*
+/*Jens Plamqvist
+        * He knows;  * java script, type script
+        * Extensions he has--------------------------
+        * Visual Studio 2019 Community Edition
+            Git for Windows
+            VS 2019 Extensions jag rekommenderar:
+            - Codemaid
+            - Viasfora
+            - GitHub extension for Visual Studio
+            - Git diff margin
+            - Auto save file
+            - Add new file
+            - Mouse navigation
+        * fråga------------------------------
+        * Har inte tillgång till distans ITHS
+        *   -I wrote to kalle
+*/
+//user will type "GHS-300", a product name. I should check if it is valid
+//first letter can't be a digit. the nuber that comes after - should be between 200-500
+// new thigns learnt
+//  -List
+//  -.Split(), .Contains and Regex
+int checkNumbers = 0;
+            List<string> productList = new List<string>();
+            while (true)
+            {
+                Console.Write("Product: ");
+                string product = Console.ReadLine().Trim();
+                if(product.ToLower() == "exit")
+                {
+                    break;
+                }
+                //control for error
+                string lastDigits = product.Substring(product.Length - 3, 3);
+                try
+                {
+                    checkNumbers = int.Parse(lastDigits);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error\n" + ex + "\nProduct NOT accepted.");
+                    continue;
+                }
+                //control if first digit is a number
+                string firstDigit = product.Substring(0, 1);
+                try
+                {
+                    int check = int.Parse(firstDigit);
+                    Console.WriteLine("Error\n" + "\nProduct NOT accepted, Press enter to continue.");
+                    continue;
+                }
+                catch { }
+                if (!product.Contains('-'))
+                {
+                    Console.WriteLine("Inget bindestreck!");
+                    continue;
+                }
+
+                //check 200-500 
+                if (checkNumbers < 200 || checkNumbers > 500) { Console.WriteLine("Fel nummer code, försök igen."); continue; }
+
+                productList.Add(product);
+                Console.WriteLine("Här är din produkt(er): ");
+                foreach (var item in productList)
+                {
+                    Console.WriteLine(item);
+                }
+                
+            }
+            Console.WriteLine("Exiting.....................");
