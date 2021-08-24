@@ -21,6 +21,10 @@
 // new thigns learnt
 //  -List
 //  -.Split(), .Contains and Regex
+//we messed with screen sizes, color, title and changing data types.
+
+
+
 int checkNumbers = 0;
             List<string> productList = new List<string>();
             while (true)
@@ -69,3 +73,75 @@ int checkNumbers = 0;
                 
             }
             Console.WriteLine("Exiting.....................");
+
+//***********************************************************************************************************
+//            // Display current Title
+//            Console.WriteLine("Default Title: {0}",
+//                                   Console.Title);
+
+            //            // Set the Title to GeeksForGeeks
+            //            Console.Title = "GeeksForGeeks";
+
+            //            // Display current Title
+            //            Console.WriteLine("Changed Title: {0}",
+            //                                   Console.Title);
+            ////**************************************************************************
+            //            // Display current Foreground color
+            //            Console.WriteLine("Default Foreground Color: {0}",
+            //                                     Console.ForegroundColor);
+
+            //            // Set the Foreground color to blue
+            //            Console.ForegroundColor
+            //                = ConsoleColor.Gray;
+
+            //            // Display current Foreground color
+            //            Console.WriteLine("Changed Foreground Color: {0}",
+            //                                    Console.ForegroundColor);
+
+            //**************************************************************************
+
+
+            //**************************************************************************
+
+            //    int largestWidth = Console.LargestWindowWidth;
+            //    int largestHeight = Console.LargestWindowHeight;
+
+            //    // Passed 40, 40 to SetWindowSize to 
+            //    // change window size to 40 by 40
+            //    Console.SetWindowSize(largestWidth, largestHeight);     //213, 52
+
+            //    // Printing the current dimensions
+            //Console.WriteLine(Console.WindowWidth);
+            //    Console.WriteLine(Console.WindowHeight);
+            //********************************************************************************
+            //double num1 = 38.14;
+            //int num2 = 35;
+            //float num3 = 2.66666666666666F;
+            //Console.WriteLine(num1 + "\n" + num2 + "\n" + num3 + "\n");
+
+            //double addAll = num1 + num2 + num3; Console.WriteLine(addAll);
+
+            //double addAll6 = Math.Round(addAll, 6); Console.WriteLine(addAll6);
+            //int numAvg = (int)addAll6 / 3; Console.WriteLine(numAvg);
+            ////double[] arr = new double[num1, (double)num2, num3];
+
+
+
+            //Console.WriteLine($"Hello {name}"); //this method of printing is
+            //                                    //called template string 
+
+            //string name1 = "Jonathan";
+            //int dateofBirthYear = 1988;
+            //string dateofBirth = "1988-12-19";
+            //bool santFalsk = true;
+            //double height = 1.70D;              //D is optional, F works but not M
+            //string adress = "Nykarleby, Stockholm";
+            //char firstLetter = name[0];
+            //Console.WriteLine($"Hey, jag heter {name1}. Jag var född i år {dateofBirthYear}." +
+            //    $"\nHela datumet är {dateofBirth}." +
+            //    $"\nHär skriver jag ut bool värde {santFalsk}." +
+            //    $"\nMin höjd {height}." +
+            //    $"\nMitt adress{adress} och första bokstaven på mitt namn {firstLetter}");
+
+
+
