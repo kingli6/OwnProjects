@@ -19,7 +19,7 @@
 //user will type "GHS-300", a product name. I should check if it is valid
 //first letter can't be a digit. the nuber that comes after - should be between 200-500
 // new thigns learnt
-//  -List
+//  -List, .All, .IndexOf
 //  -.Split(), .Contains and Regex
 //we messed with screen sizes, color, title and changing data types.
 
