@@ -1,0 +1,21 @@
+//quick rhomb
+            Console.Write("Make RHOMB\nEnter size: ");
+            int rhombSize = int.Parse(Console.ReadLine());
+            int maxRange = rhombSize * 2, midRange = rhombSize;
+
+            for (int col = 0; col < maxRange; col++)
+            {
+                for (int row = 0; row < maxRange; row++)
+                {
+                    if ((row >= Math.Abs(midRange-col)) && (row <= maxRange-(Math.Abs(midRange-col))))
+                    {
+                        Console.Write("*");
+                    }
+                    else
+                    {
+                        Console.Write(' ');
+                    }
+                }
+                Console.WriteLine();
+
+            }
